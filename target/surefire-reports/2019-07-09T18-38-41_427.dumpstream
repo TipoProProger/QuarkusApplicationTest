@@ -1,0 +1,12 @@
+# Created at 2019-07-09T18:38:41.427
+OpenJDK 64-Bit Server VM warning: Insufficient space for shared memory file:
+
+# Created at 2019-07-09T18:38:41.427
+   13664
+
+# Created at 2019-07-09T18:38:41.428
+Try using the -Djava.io.tmpdir= option to select an alternate temp location.
+
+# Created at 2019-07-09T18:38:41.428
+
+
