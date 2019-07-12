@@ -129,7 +129,7 @@ Method registerClass7 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "java.util.TreeMap"
+    LDC (String) "java.util.TreeSet"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -407,10 +407,10 @@ Method beforeAnalysis : V
     LDC (String) "META-INF/services/javax.ws.rs.client.ClientBuilder"
     // Method descriptor: (Ljava/lang/String;)V
     INVOKESTATIC io/quarkus/runtime/ResourceHelper#registerResources
-    LDC (String) "META-INF/services/org.eclipse.yasson.spi.JsonbComponentInstanceCreator"
+    LDC (String) "META-INF/services/org.jboss.logmanager.EmbeddedConfigurator"
     // Method descriptor: (Ljava/lang/String;)V
     INVOKESTATIC io/quarkus/runtime/ResourceHelper#registerResources
-    LDC (String) "META-INF/services/org.jboss.logmanager.EmbeddedConfigurator"
+    LDC (String) "META-INF/services/org.eclipse.yasson.spi.JsonbComponentInstanceCreator"
     // Method descriptor: (Ljava/lang/String;)V
     INVOKESTATIC io/quarkus/runtime/ResourceHelper#registerResources
     LDC (Integer) 1
@@ -425,8 +425,8 @@ Method beforeAnalysis : V
     ALOAD 21
     // Method descriptor: (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     INVOKEVIRTUAL java/lang/Class#getDeclaredMethod
-    ASTORE 22
-    ALOAD 22
+    ASTORE 23
+    ALOAD 23
     CHECKCAST java/lang/reflect/AccessibleObject
     LDC (Boolean) true
     // Method descriptor: (Z)V
@@ -438,14 +438,14 @@ Method beforeAnalysis : V
     ** label43
     LDC (Integer) 1
     ANEWARRAY java/lang/Object
-    ASTORE 23
-    ALOAD 23
+    ASTORE 22
+    ALOAD 22
     LDC (Integer) 0
     LDC (String) "yasson-messages"
     AASTORE
-    ALOAD 22
-    ALOAD 24
     ALOAD 23
+    ALOAD 24
+    ALOAD 22
     // Method descriptor: (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     INVOKEVIRTUAL java/lang/reflect/Method#invoke
     POP
@@ -466,7 +466,7 @@ Method beforeAnalysis : V
     LDC (Integer) 0
     LDC (String) "messages"
     AASTORE
-    ALOAD 22
+    ALOAD 23
     ALOAD 24
     ALOAD 25
     // Method descriptor: (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
@@ -1287,7 +1287,7 @@ Method registerClass2 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "java.util.HashMap"
+    LDC (String) "java.util.HashSet"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -1491,7 +1491,7 @@ Method registerClass6 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "java.util.LinkedHashSet"
+    LDC (String) "java.util.TreeMap"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -1860,7 +1860,7 @@ Method registerClass1 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "java.util.ArrayList"
+    LDC (String) "java.util.HashMap"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -2221,7 +2221,7 @@ Method registerClass5 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "java.util.LinkedHashMap"
+    LDC (String) "java.util.LinkedHashSet"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -2374,7 +2374,7 @@ Method registerClass73 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "io.quarkus.jsonb.QuarkusJsonbComponentInstanceCreator"
+    LDC (String) "io.quarkus.runtime.logging.InitialConfigurator"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -2739,7 +2739,7 @@ Method registerClass0 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "org.postgresql.Driver"
+    LDC (String) "java.util.ArrayList"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -2750,7 +2750,7 @@ Method registerClass0 : V
     ALOAD 0
     // Method descriptor: ()[Ljava/lang/reflect/Method;
     INVOKEVIRTUAL java/lang/Class#getDeclaredMethods
-    ASTORE 3
+    POP
     ALOAD 0
     // Method descriptor: ()[Ljava/lang/reflect/Field;
     INVOKEVIRTUAL java/lang/Class#getDeclaredFields
@@ -2766,10 +2766,6 @@ Method registerClass0 : V
     // Method descriptor: ([Ljava/lang/Class;)V
     INVOKESTATIC org/graalvm/nativeimage/hosted/RuntimeReflection#register
     ALOAD 2
-    CHECKCAST [Ljava/lang/reflect/Executable;
-    // Method descriptor: ([Ljava/lang/reflect/Executable;)V
-    INVOKESTATIC org/graalvm/nativeimage/hosted/RuntimeReflection#register
-    ALOAD 3
     CHECKCAST [Ljava/lang/reflect/Executable;
     // Method descriptor: ([Ljava/lang/reflect/Executable;)V
     INVOKESTATIC org/graalvm/nativeimage/hosted/RuntimeReflection#register
@@ -3104,7 +3100,7 @@ Method registerClass4 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "java.util.LinkedList"
+    LDC (String) "java.util.LinkedHashMap"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -3367,7 +3363,7 @@ Method registerClass74 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "io.quarkus.runtime.logging.InitialConfigurator"
+    LDC (String) "io.quarkus.jsonb.QuarkusJsonbComponentInstanceCreator"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -3473,7 +3469,7 @@ Method registerClass8 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "java.util.TreeSet"
+    LDC (String) "org.postgresql.Driver"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0
@@ -3484,7 +3480,7 @@ Method registerClass8 : V
     ALOAD 0
     // Method descriptor: ()[Ljava/lang/reflect/Method;
     INVOKEVIRTUAL java/lang/Class#getDeclaredMethods
-    POP
+    ASTORE 3
     ALOAD 0
     // Method descriptor: ()[Ljava/lang/reflect/Field;
     INVOKEVIRTUAL java/lang/Class#getDeclaredFields
@@ -3500,6 +3496,10 @@ Method registerClass8 : V
     // Method descriptor: ([Ljava/lang/Class;)V
     INVOKESTATIC org/graalvm/nativeimage/hosted/RuntimeReflection#register
     ALOAD 2
+    CHECKCAST [Ljava/lang/reflect/Executable;
+    // Method descriptor: ([Ljava/lang/reflect/Executable;)V
+    INVOKESTATIC org/graalvm/nativeimage/hosted/RuntimeReflection#register
+    ALOAD 3
     CHECKCAST [Ljava/lang/reflect/Executable;
     // Method descriptor: ([Ljava/lang/reflect/Executable;)V
     INVOKESTATIC org/graalvm/nativeimage/hosted/RuntimeReflection#register
@@ -4313,7 +4313,7 @@ Method registerClass3 : V
 ) {
     ** label1
     ** label2
-    LDC (String) "java.util.HashSet"
+    LDC (String) "java.util.LinkedList"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Class;
     INVOKESTATIC java/lang/Class#forName
     ASTORE 0

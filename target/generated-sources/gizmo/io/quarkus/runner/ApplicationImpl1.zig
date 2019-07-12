@@ -90,6 +90,14 @@ Method doStart : V
     ** label18
     // Method descriptor: ()V
     INVOKESTATIC io/quarkus/runtime/generated/RunTimeConfig#getRunTimeConfiguration
+    NEW io/quarkus/deployment/steps/LoggingResourceProcessor$setupLoggingRuntimeInit4
+    DUP
+    // Method descriptor: ()V
+    INVOKESPECIAL io/quarkus/deployment/steps/LoggingResourceProcessor$setupLoggingRuntimeInit4#<init>
+    CHECKCAST io/quarkus/runtime/StartupTask
+    ALOAD 4
+    // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
+    INVOKEINTERFACE io/quarkus/runtime/StartupTask#deploy
     NEW io/quarkus/deployment/steps/AgroalProcessor$configureRuntimeProperties2
     DUP
     // Method descriptor: ()V
@@ -98,34 +106,26 @@ Method doStart : V
     ALOAD 4
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
     INVOKEINTERFACE io/quarkus/runtime/StartupTask#deploy
-    NEW io/quarkus/deployment/steps/LoggingResourceProcessor$setupLoggingRuntimeInit6
+    NEW io/quarkus/deployment/steps/ThreadPoolSetup$createExecutor6
     DUP
     // Method descriptor: ()V
-    INVOKESPECIAL io/quarkus/deployment/steps/LoggingResourceProcessor$setupLoggingRuntimeInit6#<init>
+    INVOKESPECIAL io/quarkus/deployment/steps/ThreadPoolSetup$createExecutor6#<init>
     CHECKCAST io/quarkus/runtime/StartupTask
     ALOAD 4
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
     INVOKEINTERFACE io/quarkus/runtime/StartupTask#deploy
-    NEW io/quarkus/deployment/steps/ThreadPoolSetup$createExecutor3
+    NEW io/quarkus/deployment/steps/NarayanaJtaProcessor$build3
     DUP
     // Method descriptor: ()V
-    INVOKESPECIAL io/quarkus/deployment/steps/ThreadPoolSetup$createExecutor3#<init>
+    INVOKESPECIAL io/quarkus/deployment/steps/NarayanaJtaProcessor$build3#<init>
     CHECKCAST io/quarkus/runtime/StartupTask
     ALOAD 4
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
     INVOKEINTERFACE io/quarkus/runtime/StartupTask#deploy
-    NEW io/quarkus/deployment/steps/NarayanaJtaProcessor$build4
+    NEW io/quarkus/deployment/steps/ConfigBuildStep$validateConfigProperties13
     DUP
     // Method descriptor: ()V
-    INVOKESPECIAL io/quarkus/deployment/steps/NarayanaJtaProcessor$build4#<init>
-    CHECKCAST io/quarkus/runtime/StartupTask
-    ALOAD 4
-    // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
-    INVOKEINTERFACE io/quarkus/runtime/StartupTask#deploy
-    NEW io/quarkus/deployment/steps/ConfigBuildStep$validateConfigProperties15
-    DUP
-    // Method descriptor: ()V
-    INVOKESPECIAL io/quarkus/deployment/steps/ConfigBuildStep$validateConfigProperties15#<init>
+    INVOKESPECIAL io/quarkus/deployment/steps/ConfigBuildStep$validateConfigProperties13#<init>
     CHECKCAST io/quarkus/runtime/StartupTask
     ALOAD 4
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
@@ -231,18 +231,18 @@ Method <clinit> : V
     ALOAD 0
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
     INVOKEINTERFACE io/quarkus/runtime/StartupTask#deploy
-    NEW io/quarkus/deployment/steps/SubstrateConfigBuildStep$build9
+    NEW io/quarkus/deployment/steps/SubstrateConfigBuildStep$build10
     DUP
     // Method descriptor: ()V
-    INVOKESPECIAL io/quarkus/deployment/steps/SubstrateConfigBuildStep$build9#<init>
+    INVOKESPECIAL io/quarkus/deployment/steps/SubstrateConfigBuildStep$build10#<init>
     CHECKCAST io/quarkus/runtime/StartupTask
     ALOAD 0
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
     INVOKEINTERFACE io/quarkus/runtime/StartupTask#deploy
-    NEW io/quarkus/deployment/steps/UndertowBuildStep$servletContextBean8
+    NEW io/quarkus/deployment/steps/UndertowBuildStep$servletContextBean7
     DUP
     // Method descriptor: ()V
-    INVOKESPECIAL io/quarkus/deployment/steps/UndertowBuildStep$servletContextBean8#<init>
+    INVOKESPECIAL io/quarkus/deployment/steps/UndertowBuildStep$servletContextBean7#<init>
     CHECKCAST io/quarkus/runtime/StartupTask
     ALOAD 0
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
@@ -263,10 +263,10 @@ Method <clinit> : V
     ALOAD 0
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V
     INVOKEINTERFACE io/quarkus/runtime/StartupTask#deploy
-    NEW io/quarkus/deployment/steps/ResteasyServerCommonProcessor$setupInjection13
+    NEW io/quarkus/deployment/steps/ResteasyServerCommonProcessor$setupInjection15
     DUP
     // Method descriptor: ()V
-    INVOKESPECIAL io/quarkus/deployment/steps/ResteasyServerCommonProcessor$setupInjection13#<init>
+    INVOKESPECIAL io/quarkus/deployment/steps/ResteasyServerCommonProcessor$setupInjection15#<init>
     CHECKCAST io/quarkus/runtime/StartupTask
     ALOAD 0
     // Method descriptor: (Lio/quarkus/runtime/StartupContext;)V

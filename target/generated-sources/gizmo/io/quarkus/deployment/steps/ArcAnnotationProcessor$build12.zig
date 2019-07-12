@@ -69,21 +69,21 @@ Method deploy_0 : V
     ALOAD 2
     LDC (Integer) 1
     AALOAD
-    ASTORE 8
+    ASTORE 7
     ALOAD 1
     LDC (String) "proxykey11"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Object;
     INVOKEVIRTUAL io/quarkus/runtime/StartupContext#getValue
-    ASTORE 7
-    ALOAD 8
-    CHECKCAST java/util/Collection
+    ASTORE 8
     ALOAD 7
+    CHECKCAST java/util/Collection
+    ALOAD 8
     // Method descriptor: (Ljava/lang/Object;)Z
     INVOKEINTERFACE java/util/Collection#add
     POP
     ALOAD 2
     LDC (Integer) 2
-    ALOAD 8
+    ALOAD 7
     AASTORE
     NEW java/util/HashSet
     DUP
@@ -154,13 +154,13 @@ Method deploy_0 : V
     POP
     ALOAD 10
     CHECKCAST java/util/Collection
-    LDC (String) "io.quarkus.undertow.runtime.ServletProducer"
+    LDC (String) "org.jboss.tm.XAResourceRecoveryRegistry"
     // Method descriptor: (Ljava/lang/Object;)Z
     INVOKEINTERFACE java/util/Collection#add
     POP
     ALOAD 10
     CHECKCAST java/util/Collection
-    LDC (String) "org.jboss.tm.XAResourceRecoveryRegistry"
+    LDC (String) "io.quarkus.undertow.runtime.ServletProducer"
     // Method descriptor: (Ljava/lang/Object;)Z
     INVOKEINTERFACE java/util/Collection#add
     POP
@@ -196,25 +196,25 @@ Method deploy_0 : V
     POP
     ALOAD 10
     CHECKCAST java/util/Collection
-    LDC (String) "javax.transaction.UserTransaction"
-    // Method descriptor: (Ljava/lang/Object;)Z
-    INVOKEINTERFACE java/util/Collection#add
-    POP
-    ALOAD 10
-    CHECKCAST java/util/Collection
     LDC (String) "java.util.Collection"
     // Method descriptor: (Ljava/lang/Object;)Z
     INVOKEINTERFACE java/util/Collection#add
     POP
     ALOAD 10
     CHECKCAST java/util/Collection
-    LDC (String) "io.quarkus.arc.InjectableRequestContextController"
+    LDC (String) "javax.transaction.UserTransaction"
     // Method descriptor: (Ljava/lang/Object;)Z
     INVOKEINTERFACE java/util/Collection#add
     POP
     ALOAD 10
     CHECKCAST java/util/Collection
     LDC (String) "javax.servlet.http.HttpServletResponse"
+    // Method descriptor: (Ljava/lang/Object;)Z
+    INVOKEINTERFACE java/util/Collection#add
+    POP
+    ALOAD 10
+    CHECKCAST java/util/Collection
+    LDC (String) "io.quarkus.arc.InjectableRequestContextController"
     // Method descriptor: (Ljava/lang/Object;)Z
     INVOKEINTERFACE java/util/Collection#add
     POP
@@ -274,13 +274,13 @@ Method deploy_0 : V
     POP
     ALOAD 10
     CHECKCAST java/util/Collection
-    LDC (String) "java.lang.Object"
+    LDC (String) "java.lang.Comparable"
     // Method descriptor: (Ljava/lang/Object;)Z
     INVOKEINTERFACE java/util/Collection#add
     POP
     ALOAD 10
     CHECKCAST java/util/Collection
-    LDC (String) "java.lang.Comparable"
+    LDC (String) "java.lang.Object"
     // Method descriptor: (Ljava/lang/Object;)Z
     INVOKEINTERFACE java/util/Collection#add
     POP
@@ -298,22 +298,22 @@ Method deploy_0 : V
     LDC (String) "proxykey20"
     // Method descriptor: (Ljava/lang/String;)Ljava/lang/Object;
     INVOKEVIRTUAL io/quarkus/runtime/StartupContext#getValue
-    ASTORE 14
+    ASTORE 12
     ALOAD 2
     LDC (Integer) 2
     AALOAD
-    ASTORE 12
+    ASTORE 13
     ALOAD 2
     LDC (Integer) 4
     AALOAD
-    ASTORE 13
+    ASTORE 14
     ALOAD 11
     CHECKCAST io/quarkus/arc/runtime/ArcDeploymentTemplate
-    ALOAD 14
-    CHECKCAST io/quarkus/arc/ArcContainer
     ALOAD 12
-    CHECKCAST java/util/List
+    CHECKCAST io/quarkus/arc/ArcContainer
     ALOAD 13
+    CHECKCAST java/util/List
+    ALOAD 14
     CHECKCAST java/util/Collection
     // Method descriptor: (Lio/quarkus/arc/ArcContainer;Ljava/util/List;Ljava/util/Collection;)Lio/quarkus/arc/runtime/BeanContainer;
     INVOKEVIRTUAL io/quarkus/arc/runtime/ArcDeploymentTemplate#initBeanContainer

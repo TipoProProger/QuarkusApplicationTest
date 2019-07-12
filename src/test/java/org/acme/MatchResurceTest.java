@@ -8,14 +8,4 @@ import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 public class MatchResurceTest {
-
-    @Test
-    public void testHelloEndpoint() {
-        given()
-          .when().get("/match")
-          .then()
-             .statusCode(200)
-             .body(is("hello"));
-    }
-
 }
