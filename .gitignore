@@ -2,4 +2,5 @@ mwnv
 mvnw.cmd
 pom.xml
 target/
+.mvnw/
 !target/*-runner
