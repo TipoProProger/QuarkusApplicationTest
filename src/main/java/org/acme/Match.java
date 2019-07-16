@@ -1,21 +1,49 @@
 package org.acme;
 
 import java.util.Objects;
+import javax.persistence.Column;
 
-import io.quarkus.runtime.annotations.RegisterForReflection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-@RegisterForReflection
+@Entity
+@Table(name = "Matchs")
+@NamedQuery(name = "Matchs.findAll",
+      query = "FROM Match")
+@NamedQuery(name = "Matchs.findByName",
+      query = "SELECT m FROM Match m WHERE name = :paramName")
 public class Match {
-
+    
+    @Id
+    @SequenceGenerator(
+            name = "matchsSequence",
+            sequenceName = "Matchs_id_seq",
+            allocationSize = 1,
+            initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "matchsSequence")
+    @Column(name = "Id", updatable = false, nullable = false)
+    private Long id;
+    
+    @Column(length = 40, unique = true)
     private String name;
+    
+    @Column(length = 50, unique = false)
     private String description;
 
     public Match() {
     }
 
-    public Match(String name, String description) {
-        this.name = name;
-        this.description = description;
+    public Long getId() {
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

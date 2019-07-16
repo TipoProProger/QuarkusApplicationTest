@@ -1,36 +1,51 @@
 package org.acme;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-
 import javax.enterprise.context.ApplicationScoped;
 
 import javax.inject.Inject;
 
-import javax.sql.DataSource;
-
-import java.util.ArrayList;
+import javax.persistence.EntityManager;
+import javax.persistence.Parameter;
+import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
 @ApplicationScoped
 public class MatchService {
- 
-    private ArrayList<Match> matchs = new ArrayList<>();
-
+    @Inject
+    private EntityManager em;
+    
     public MatchService() {
-        matchs.add(0, new Match("kek", "kekDescription"));
     }
     
+    @Transactional
+    public void addMatch(String name, String description) {
+        Match match = new Match();
+        match.setName(name);
+        match.setDescription(description);
+        em.persist(match);
+    }
+    
+    @Transactional
     public String getAll() {
-        String buf = "";
-        for (Match match : matchs) {
-            buf += match.getName() + " ";
+        String answer = "";
+        Match buf[] = em.createNamedQuery("Matchs.findAll", Match.class).getResultList().toArray(new Match[0]);
+        
+        if (buf == null) {
+            return "Mass was NULL\n";
         }
         
-        return buf;        
+        for (Match match : buf) {
+            if (match == null) {
+                continue;
+            }
+            
+            answer += match.getId().toString() + " " + match.getName() + " " + match.getDescription() + "\n";
+        }
+        
+        return answer;        
     }
     
+    /*
     public String getMe(String name) {
         for (Match match : matchs) {
             if (match.getName().equals(name)) {
@@ -40,14 +55,23 @@ public class MatchService {
         
         return "NO";
     }
-
+*/
+    @Transactional
     public Match getByName(Match m) {
-        for (Match match : matchs) {
-            if (match.equals(m)) {
-                return match;
-            }
-        }
+        TypedQuery<Match> q = em.createNamedQuery("Matchs.findByName", Match.class);
         
-        return null;
+        //for (Parameter p : q.getParameters()) {
+        //    System.out.print(p.getPosition() + " " + p.getName() + "\n");
+        //}
+        
+        q.setParameter("paramName", m.getName());
+        Match buf[] = q.getResultList().toArray(new Match[0]);
+        
+        if (buf.length == 0) {
+            return null;
+        } else {
+            return buf[0];
+        }
     }
+
 }
