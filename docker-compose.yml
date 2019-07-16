@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    build: 
+        context: AngularTest
+        dockerfile: Dockerfile
+    ports:
+        - "80:80"
+  net:
+    build:
+        context: .
+        dockerfile: src/main/docker/Dockerfile.native
+    ports:
+        - "8080:8080"
+        

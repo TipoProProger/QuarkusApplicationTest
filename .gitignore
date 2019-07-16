@@ -4,3 +4,7 @@ pom.xml
 target/
 .mvnw/
 !target/*-runner
+
+\.mvn/
+
+mvnw
