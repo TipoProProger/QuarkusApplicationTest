@@ -18,6 +18,6 @@ services:
     ports:
         - "5432:5432"
     volumes:
-        - my_dbdata:/var/lib/postgresql/data/
+        - memory:/var/lib/postgresql/data/
 volumes: 
-    my_dbdata:
+    memory:

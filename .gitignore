@@ -25,3 +25,7 @@ target/generated-sources/
 target/classes/
 
 *.jar
+
+target/transformer-cache/
+
+target/wiring-devmode/
