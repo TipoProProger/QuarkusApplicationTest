@@ -10,8 +10,14 @@ services:
     build:
         context: .
         dockerfile: src/main/docker/Dockerfile.native
+    expose:
+        - "8080"
     ports:
         - "8080:8080"
+    environment:
+        POSTGRES_USER: "test"
+        POSTGRES_PASSWORD: "test"
+        POSTGRES_DB: "test"
   db:
     image: "postgres:11"
     container_name: "my_postgres"
