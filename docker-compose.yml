@@ -17,6 +17,9 @@ services:
     container_name: "my_postgres"
     ports:
         - "5432:5432"
+    environment:
+        POSTGRES_USER: "test"
+        POSTGRES_PASSWORD: "test"
     volumes:
         - memory:/var/lib/postgresql/data/
 volumes: 
