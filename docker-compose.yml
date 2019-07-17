@@ -12,4 +12,11 @@ services:
         dockerfile: src/main/docker/Dockerfile.native
     ports:
         - "8080:8080"
+  db:
+    image: "postgres:11"
+    container_name: "my_postgres"
+    ports:
+        - "5432:5432
+    volumes:
+        - my_dbdata:/var/lib/postgresql/data/
         
