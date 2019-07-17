@@ -6,18 +6,6 @@ services:
         dockerfile: Dockerfile
     ports:
         - "80:80"
-  net:
-    build:
-        context: .
-        dockerfile: src/main/docker/Dockerfile.native
-    expose:
-        - "8080"
-    ports:
-        - "8080:8080"
-    environment:
-        POSTGRES_USER: "test"
-        POSTGRES_PASSWORD: "test"
-        POSTGRES_DB: "test"
   db:
     image: "postgres:11"
     container_name: "my_postgres"
@@ -29,5 +17,19 @@ services:
         POSTGRES_DB: "test"
     volumes:
         - memory:/var/lib/postgresql/data/
+  net:
+    build:
+        context: .
+        dockerfile: src/main/docker/Dockerfile.native
+    depends_on:
+        - db
+    expose:
+        - "8080"
+    ports:
+        - "8080:8080"
+    environment:
+        POSTGRES_USER: "test"
+        POSTGRES_PASSWORD: "test"
+        POSTGRES_DB: "test"
 volumes: 
     memory:
