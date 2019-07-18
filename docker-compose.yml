@@ -17,7 +17,10 @@ services:
         POSTGRES_PASSWORD: "test"
         POSTGRES_DB: "test"
     ports:
-        - "5432:5432"
+        - target: "5432"
+          publicshed: "127.0.0.0:5432"
+          protocol: tcp
+          mode: host
     volumes:
         - memory:/var/lib/postgresql/data/
     networks:
@@ -34,6 +37,8 @@ services:
         POSTGRES_DB: "test"
     networks:
         - back-tier
+    ports:
+        - "8080:8080"
 volumes: 
     memory:
 networks:
