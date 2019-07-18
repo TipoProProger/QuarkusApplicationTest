@@ -17,8 +17,8 @@ services:
         POSTGRES_PASSWORD: "test"
         POSTGRES_DB: "test"
     ports:
-        - target: 5432
-          publicshed: "127.0.0.0:5432"
+        - target: "5432"
+          publicshed: "5432"
           protocol: tcp
           mode: host
     volumes:
